@@ -26,7 +26,10 @@ export const Route = createFileRoute("/")({
         content:
           "Warm, expressive illustrations for children’s books, book covers and character design. Explore Adeniran Felicia’s portfolio and start your project.",
       },
-      { property: "og:title", content: "Adeniran Felicia — Illustrations That Make Stories Feel Alive" },
+      {
+        property: "og:title",
+        content: "Adeniran Felicia — Illustrations That Make Stories Feel Alive",
+      },
       {
         property: "og:description",
         content:
@@ -54,8 +57,14 @@ function HomePage() {
       {/* B — Featured showcase */}
       <section id="featured" className="px-3 pt-10 sm:px-5">
         <div className="relative mx-auto max-w-[88rem] overflow-hidden rounded-4xl bg-ink px-6 py-16 sm:px-12 md:py-24">
-          <div className="absolute -right-24 -top-24 size-80 rounded-full bg-lilac/20 blur-3xl" aria-hidden />
-          <div className="absolute -bottom-32 left-10 size-96 rounded-full bg-coral/15 blur-3xl" aria-hidden />
+          <div
+            className="absolute -right-24 -top-24 size-80 rounded-full bg-lilac/20 blur-3xl"
+            aria-hidden
+          />
+          <div
+            className="absolute -bottom-32 left-10 size-96 rounded-full bg-coral/15 blur-3xl"
+            aria-hidden
+          />
           <div className="relative mx-auto max-w-6xl">
             <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <SectionHeader
@@ -83,7 +92,8 @@ function HomePage() {
               eyebrow="how I can help"
               title={
                 <>
-                  Illustration for every <span className="italic font-wonky text-coral">chapter</span>
+                  Illustration for every{" "}
+                  <span className="italic font-wonky text-coral">chapter</span>
                 </>
               }
               intro="From the first character sketch to the finished cover, I create artwork that supports your story and delights young readers."
@@ -126,13 +136,20 @@ function HomePage() {
               intro="I’m a children’s book illustrator and character designer who creates expressive, imaginative artwork for stories, books and playful visual projects. My work focuses on warmth, personality and storytelling — charming characters in colourful scenes that connect with young audiences and the people creating for them."
             />
             <ul className="mt-7 flex flex-wrap gap-2">
-              {["Picture books", "Book covers", "Character sheets", "Whimsical worlds", "Educational art"].map(
-                (chip) => (
-                  <li key={chip} className="rounded-full bg-muted px-3.5 py-1.5 text-sm font-medium text-foreground">
-                    {chip}
-                  </li>
-                ),
-              )}
+              {[
+                "Picture books",
+                "Book covers",
+                "Character sheets",
+                "Whimsical worlds",
+                "Educational art",
+              ].map((chip) => (
+                <li
+                  key={chip}
+                  className="rounded-full bg-muted px-3.5 py-1.5 text-sm font-medium text-foreground"
+                >
+                  {chip}
+                </li>
+              ))}
             </ul>
             <Button asChild variant="ink" size="xl" className="mt-8">
               <Link to="/about">
@@ -238,7 +255,10 @@ function HeroArtwork() {
     <div className="relative mx-auto aspect-[1/1.05] w-full max-w-[560px]">
       {/* backdrop shapes */}
       <div className="absolute inset-[8%] rounded-full bg-lilac-soft" aria-hidden />
-      <div className="absolute right-[4%] top-[6%] size-24 rounded-full bg-mustard-soft" aria-hidden />
+      <div
+        className="absolute right-[4%] top-[6%] size-24 rounded-full bg-mustard-soft"
+        aria-hidden
+      />
 
       {/* portrait */}
       <div className="absolute inset-x-[17%] bottom-[4%] top-[3%] arch overflow-hidden bg-lilac-soft shadow-lift ring-8 ring-card">
@@ -259,10 +279,13 @@ function HeroArtwork() {
           <path id="circle-text" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0" />
         </defs>
         <circle cx="100" cy="100" r="96" className="fill-card" />
-        <text className="fill-current font-sans text-[19px] font-semibold uppercase tracking-[0.32em]">
+        <text className="fill-current font-sans text-[15px] font-semibold uppercase tracking-[0.2em]">
           <textPath href="#circle-text">picture books · covers · characters ·</textPath>
         </text>
-        <path d="M100 82 l5 13 14 1 -11 9 4 14 -12 -8 -12 8 4 -14 -11 -9 14 -1z" className="fill-mustard" />
+        <path
+          d="M100 82 l5 13 14 1 -11 9 4 14 -12 -8 -12 8 4 -14 -11 -9 14 -1z"
+          className="fill-mustard"
+        />
       </svg>
 
       {/* floating art cards */}
@@ -271,7 +294,11 @@ function HeroArtwork() {
           className="book absolute left-0 top-[8%] w-[24%] animate-float"
           style={{ "--r": "-9deg" } as CSSProperties}
         >
-          <img src={heroArt.cover.image} alt="Book cover concept: Lola and the Lantern Garden" className="block h-auto w-full" />
+          <img
+            src={heroArt.cover.image}
+            alt="Book cover concept: Lola and the Lantern Garden"
+            className="block h-auto w-full"
+          />
         </div>
       )}
       {heroArt.scene && (

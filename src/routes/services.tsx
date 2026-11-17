@@ -21,7 +21,8 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "Illustration Services — Adeniran Felicia" },
       {
         property: "og:description",
-        content: "Seven ways to bring your story to life, from character sheets to finished covers.",
+        content:
+          "Seven ways to bring your story to life, from character sheets to finished covers.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -60,7 +61,8 @@ function ServicesPage() {
         <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-3 duration-700">
           <p className="font-hand text-2xl text-coral">services</p>
           <h1 className="mt-2 text-5xl font-semibold leading-[1] text-foreground sm:text-7xl">
-            Illustration that <span className="italic font-wonky text-coral">supports</span> your story
+            Illustration that <span className="italic font-wonky text-coral">supports</span> your
+            story
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Whether you’re an author with a finished manuscript, a publisher planning a series, or a
@@ -103,7 +105,9 @@ function ServicesPage() {
                 >
                   {i + 1}
                 </span>
-                <h3 className="mt-6 font-display text-xl font-semibold text-foreground">{step.title}</h3>
+                <h3 className="mt-6 font-display text-xl font-semibold text-foreground">
+                  {step.title}
+                </h3>
                 <p className="mt-2 leading-relaxed text-muted-foreground">{step.text}</p>
               </li>
             </Reveal>

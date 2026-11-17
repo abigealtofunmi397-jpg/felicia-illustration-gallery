@@ -21,7 +21,9 @@ export function TestimonialCard({ t, featured = false }: { t: Testimonial; featu
           <span
             className={cn(
               "rounded-full border border-dashed px-2.5 py-0.5 text-[0.7rem] font-semibold uppercase tracking-wider",
-              featured ? "border-ink-foreground/30 text-ink-foreground/70" : "border-border text-muted-foreground",
+              featured
+                ? "border-ink-foreground/30 text-ink-foreground/70"
+                : "border-border text-muted-foreground",
             )}
           >
             Sample review
@@ -38,7 +40,9 @@ export function TestimonialCard({ t, featured = false }: { t: Testimonial; featu
       </blockquote>
       <figcaption className="mt-6 border-t border-current/10 pt-4">
         <p className="font-semibold">{t.label}</p>
-        <p className={cn("text-sm", featured ? "text-ink-foreground/65" : "text-muted-foreground")}>{t.project}</p>
+        <p className={cn("text-sm", featured ? "text-ink-foreground/65" : "text-muted-foreground")}>
+          {t.project}
+        </p>
       </figcaption>
     </figure>
   );

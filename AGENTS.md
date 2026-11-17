@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Site content lives in typed data modules under `src/data/` (portfolio, services, testimonials, blog) and contact links in `src/lib/site.ts`; pages only render them, so content edits never touch layout code.
+- Portfolio images are CDN asset pointers in `src/assets/portfolio/`, loaded by filename via `import.meta.glob` in `src/data/portfolio.ts`; keep one pointer per piece so no image is reused.
+- Booking buttons render only when `SITE.bookingUrl` is a real http(s) link, so no broken call-to-action ships.
+- The inquiry form has no backend: it formats details with `buildInquiryMessage` and opens WhatsApp, so nothing claims an email was sent.

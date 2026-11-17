@@ -8,10 +8,14 @@ export const Route = createFileRoute("/privacy")({
       { title: "Privacy Policy — Adeniran Felicia" },
       {
         name: "description",
-        content: "How Adeniran Felicia’s portfolio website handles your information when you get in touch.",
+        content:
+          "How Adeniran Felicia’s portfolio website handles your information when you get in touch.",
       },
       { property: "og:title", content: "Privacy Policy — Adeniran Felicia" },
-      { property: "og:description", content: "How your information is handled when you get in touch." },
+      {
+        property: "og:description",
+        content: "How your information is handled when you get in touch.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -63,7 +67,9 @@ function PrivacyPage() {
   return (
     <section className="mx-auto max-w-3xl px-5 pt-10 sm:px-8 lg:pt-16">
       <p className="font-hand text-2xl text-coral">the small print</p>
-      <h1 className="mt-2 text-5xl font-semibold leading-[1] text-foreground sm:text-6xl">Privacy Policy</h1>
+      <h1 className="mt-2 text-5xl font-semibold leading-[1] text-foreground sm:text-6xl">
+        Privacy Policy
+      </h1>
       <p className="mt-5 text-muted-foreground">Last updated: 17 November 2026</p>
       <div className="mt-12 space-y-10 rounded-4xl bg-card p-7 shadow-soft ring-1 ring-border/70 sm:p-12">
         {SECTIONS.map((s) => (

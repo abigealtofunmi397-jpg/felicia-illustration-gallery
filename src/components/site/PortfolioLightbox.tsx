@@ -47,7 +47,10 @@ export function PortfolioLightbox({ item, list, onClose, onNavigate }: LightboxP
               >
                 <div
                   key={item.slug}
-                  className={cn("animate-page-turn page-origin", isCover ? "book w-[62%] max-w-xs" : "w-full")}
+                  className={cn(
+                    "animate-page-turn page-origin",
+                    isCover ? "book w-[62%] max-w-xs" : "w-full",
+                  )}
                 >
                   <img
                     src={item.image}

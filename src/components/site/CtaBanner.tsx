@@ -18,7 +18,10 @@ export function CtaBanner({
     <section className="mx-auto max-w-7xl px-5 sm:px-8">
       <div className="relative overflow-hidden rounded-4xl bg-lilac-soft px-6 py-16 text-center sm:px-12 md:py-24">
         <div className="absolute -left-16 -top-16 size-64 rounded-full bg-coral-soft" aria-hidden />
-        <div className="absolute -bottom-24 -right-10 size-72 rounded-full bg-mustard-soft" aria-hidden />
+        <div
+          className="absolute -bottom-24 -right-10 size-72 rounded-full bg-mustard-soft"
+          aria-hidden
+        />
         {pieces[0] && (
           <img
             src={pieces[0].image}
@@ -45,8 +48,12 @@ export function CtaBanner({
         )}
         <div className="relative mx-auto max-w-2xl">
           <p className="font-hand text-2xl text-coral">your story, illustrated</p>
-          <h2 className="mt-2 text-4xl font-semibold leading-[1.05] text-foreground sm:text-6xl">{title}</h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">{text}</p>
+          <h2 className="mt-2 text-4xl font-semibold leading-[1.05] text-foreground sm:text-6xl">
+            {title}
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            {text}
+          </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <WhatsAppButton />
             <UpworkButton />

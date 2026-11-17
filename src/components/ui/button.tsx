@@ -17,7 +17,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         ink: "bg-ink text-ink-foreground shadow-soft hover:-translate-y-0.5 hover:shadow-lift",
-        coral: "bg-coral text-accent-foreground shadow-soft hover:-translate-y-0.5 hover:shadow-lift",
+        coral:
+          "bg-coral text-accent-foreground shadow-soft hover:-translate-y-0.5 hover:shadow-lift",
         whatsapp:
           "bg-whatsapp text-whatsapp-foreground shadow-soft hover:-translate-y-0.5 hover:shadow-lift",
         paper:

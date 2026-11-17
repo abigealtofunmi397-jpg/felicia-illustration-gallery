@@ -25,13 +25,19 @@ export function SiteFooter() {
           <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5 md:grid-cols-1">
             {NAV.map((item) => (
               <li key={item.to}>
-                <Link to={item.to} className="text-ink-foreground/80 transition-colors hover:text-mustard">
+                <Link
+                  to={item.to}
+                  className="text-ink-foreground/80 transition-colors hover:text-mustard"
+                >
                   {item.label}
                 </Link>
               </li>
             ))}
             <li>
-              <Link to="/privacy" className="text-ink-foreground/80 transition-colors hover:text-mustard">
+              <Link
+                to="/privacy"
+                className="text-ink-foreground/80 transition-colors hover:text-mustard"
+              >
                 Privacy Policy
               </Link>
             </li>
@@ -64,7 +70,10 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <Link to="/contact" className="text-ink-foreground/80 transition-colors hover:text-mustard">
+              <Link
+                to="/contact"
+                className="text-ink-foreground/80 transition-colors hover:text-mustard"
+              >
                 Send a project inquiry
               </Link>
             </li>

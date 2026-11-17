@@ -11,7 +11,7 @@ export type BlogPost = {
   tag: string;
   cover: string;
   coverAlt: string;
-  coverPosition?: string;
+  accent: "coral" | "sky" | "lilac" | "mustard" | "leaf";
   intro: string;
   sections: BlogSection[];
   closing: string;
@@ -30,6 +30,7 @@ export const POSTS: BlogPost[] = [
     tag: "Picture Books",
     cover: cover("moonlight-fireflies"),
     coverAlt: "A girl holding a glowing firefly under the moon",
+    accent: "mustard",
     intro:
       "Think back to the picture books you loved as a child. Chances are you can still see a few of the pages in your mind — a particular sky, a funny face, a cosy room you wanted to climb into. Memorable illustrations aren’t an accident. They come from a handful of choices that work together to make a reader feel something.",
     sections: [
@@ -84,6 +85,7 @@ export const POSTS: BlogPost[] = [
     tag: "Working Together",
     cover: cover("the-rabbit-library"),
     coverAlt: "A rabbit reading a book to two little bunnies in a library",
+    accent: "coral",
     intro:
       "Starting a picture book can feel exciting and a bit overwhelming. The good news: you don’t need to have everything figured out. But having a few things ready before you contact an illustrator will help you get accurate quotes, realistic timelines and artwork that matches your vision.",
     sections: [
@@ -143,7 +145,7 @@ export const POSTS: BlogPost[] = [
     tag: "Book Covers",
     cover: cover("zara-and-the-magic-map"),
     coverAlt: "A girl studying a glowing magic map on a book cover",
-    coverPosition: "50% 70%",
+    accent: "lilac",
     intro:
       "People really do judge a book by its cover — especially in children’s books, where the cover must appeal to two audiences at once: the young reader who’s drawn to colour and character, and the parent, teacher or librarian deciding what to buy.",
     sections: [
@@ -196,6 +198,7 @@ export const POSTS: BlogPost[] = [
     tag: "Characters",
     cover: cover("joyful-girl-expressions"),
     coverAlt: "An expression sheet of a joyful girl character",
+    accent: "sky",
     intro:
       "Children don’t usually remember plot structure. They remember characters — the brave rabbit, the clumsy dragon, the girl with the yellow raincoat. A well-designed character becomes the emotional anchor of your story, and often the face of your brand.",
     sections: [
@@ -242,6 +245,7 @@ export const POSTS: BlogPost[] = [
     tag: "Style",
     cover: cover("floating-island-house"),
     coverAlt: "A whimsical house on a floating island among clouds",
+    accent: "leaf",
     intro:
       "When authors describe the look they want, two words come up often: “traditional” and “whimsical”. They overlap, but understanding the difference helps you pick a style that suits your story and readers.",
     sections: [

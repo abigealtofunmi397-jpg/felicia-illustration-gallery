@@ -2,7 +2,13 @@ import { Link } from "@tanstack/react-router";
 
 import { cn } from "@/lib/utils";
 
-export function Wordmark({ className, tone = "default" }: { className?: string; tone?: "default" | "inverse" }) {
+export function Wordmark({
+  className,
+  tone = "default",
+}: {
+  className?: string;
+  tone?: "default" | "inverse";
+}) {
   return (
     <Link
       to="/"
@@ -10,7 +16,9 @@ export function Wordmark({ className, tone = "default" }: { className?: string; 
       className={cn("group inline-flex items-center gap-2.5", className)}
     >
       <span className="relative grid size-9 place-items-center rounded-full bg-coral text-accent-foreground shadow-soft transition-transform duration-500 group-hover:rotate-12">
-        <span className="font-display text-lg font-semibold italic leading-none font-wonky">af</span>
+        <span className="font-display text-lg font-semibold italic leading-none font-wonky">
+          af
+        </span>
         <span className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full bg-mustard ring-2 ring-background" />
       </span>
       <span

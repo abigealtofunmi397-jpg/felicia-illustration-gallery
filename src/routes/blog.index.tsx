@@ -5,6 +5,8 @@ import { BlogCard } from "@/components/site/BlogCard";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { Reveal } from "@/components/site/Reveal";
 import { formatDate, POSTS } from "@/data/blog";
+import { accentSoftBg } from "@/lib/accents";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -52,12 +54,16 @@ function BlogIndex() {
               params={{ slug: lead.slug }}
               className="group grid overflow-hidden rounded-4xl bg-card shadow-soft ring-1 ring-border/70 transition-shadow duration-500 hover:shadow-lift md:grid-cols-2"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-muted md:aspect-auto">
+              <div
+                className={cn(
+                  "grid min-h-72 place-items-center overflow-hidden p-10",
+                  accentSoftBg[lead.accent],
+                )}
+              >
                 <img
                   src={lead.cover}
                   alt={lead.coverAlt}
-          style={{ objectPosition: lead.coverPosition ?? "center" }}
-                  className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="max-h-96 w-auto -rotate-3 rounded-2xl object-contain shadow-book ring-8 ring-card transition-transform duration-700 group-hover:rotate-0 group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-col justify-center p-8 sm:p-12">
@@ -73,7 +79,10 @@ function BlogIndex() {
                 </p>
                 <span className="mt-6 inline-flex items-center gap-2 font-semibold text-coral">
                   Read the article
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                  <ArrowRight
+                    className="size-4 transition-transform group-hover:translate-x-1"
+                    aria-hidden
+                  />
                 </span>
               </div>
             </Link>

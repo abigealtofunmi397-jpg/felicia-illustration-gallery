@@ -41,7 +41,7 @@ export function FeaturedShowcase() {
       aria-label="Featured work"
     >
       {/* Stage */}
-      <div className="relative">
+      <div className="relative min-w-0">
         <div
           className={cn(
             "relative mx-auto grid aspect-[5/5.4] max-w-[520px] place-items-center overflow-hidden rounded-4xl p-8 transition-colors duration-700 sm:p-12",
@@ -49,14 +49,20 @@ export function FeaturedShowcase() {
           )}
         >
           {/* stacked pages behind */}
-          <div className="absolute inset-x-14 bottom-8 top-14 rotate-3 rounded-2xl bg-card/60 shadow-soft sm:inset-x-20" aria-hidden />
-          <div className="absolute inset-x-12 bottom-10 top-12 -rotate-2 rounded-2xl bg-card/80 shadow-soft sm:inset-x-16" aria-hidden />
+          <div
+            className="absolute inset-x-14 bottom-8 top-14 rotate-3 rounded-2xl bg-card/60 shadow-soft sm:inset-x-20"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-x-12 bottom-10 top-12 -rotate-2 rounded-2xl bg-card/80 shadow-soft sm:inset-x-16"
+            aria-hidden
+          />
 
           <div
             key={item.slug}
             className={cn(
               "relative z-10 animate-page-turn page-origin",
-              isCover ? "book w-[62%]" : "h-full w-auto",
+              isCover ? "book w-[62%]" : "grid size-full place-items-center",
             )}
           >
             <img
@@ -65,7 +71,7 @@ export function FeaturedShowcase() {
               className={cn(
                 isCover
                   ? "block h-auto w-full"
-                  : "h-full w-auto rounded-2xl object-contain shadow-book",
+                  : "max-h-full max-w-full rounded-2xl object-contain shadow-book",
               )}
             />
           </div>
@@ -76,7 +82,7 @@ export function FeaturedShowcase() {
       </div>
 
       {/* Copy */}
-      <div aria-live="polite">
+      <div aria-live="polite" className="min-w-0">
         <div className="flex items-center gap-4 text-ink-foreground/60">
           <span className="font-display text-5xl font-semibold tabular-nums text-ink-foreground">
             {String(index + 1).padStart(2, "0")}
@@ -85,7 +91,10 @@ export function FeaturedShowcase() {
           <span className="text-sm tabular-nums">/ {String(items.length).padStart(2, "0")}</span>
         </div>
 
-        <div key={item.slug} className="mt-6 animate-in fade-in slide-in-from-bottom-3 duration-700">
+        <div
+          key={item.slug}
+          className="mt-6 animate-in fade-in slide-in-from-bottom-3 duration-700"
+        >
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-mustard">
             {categoryById[item.category].short}
           </p>

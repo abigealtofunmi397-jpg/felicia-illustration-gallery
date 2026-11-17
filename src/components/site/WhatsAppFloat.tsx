@@ -15,7 +15,10 @@ export function WhatsAppFloat() {
         Chat on WhatsApp
       </span>
       <span className="relative grid size-14 place-items-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-lift transition-transform duration-300 group-hover:scale-105">
-        <span className="absolute inset-0 rounded-full bg-whatsapp animate-pulse-ring" aria-hidden />
+        <span
+          className="absolute inset-0 rounded-full bg-whatsapp animate-pulse-ring"
+          aria-hidden
+        />
         <MessageCircle className="relative size-6" aria-hidden />
       </span>
     </a>

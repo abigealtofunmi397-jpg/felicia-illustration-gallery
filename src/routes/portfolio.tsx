@@ -37,7 +37,8 @@ export const Route = createFileRoute("/portfolio")({
       { property: "og:title", content: "Portfolio — Adeniran Felicia" },
       {
         property: "og:description",
-        content: "Book covers, character designs, storybook interiors and whimsical illustration concepts.",
+        content:
+          "Book covers, character designs, storybook interiors and whimsical illustration concepts.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -58,10 +59,15 @@ function PortfolioPage() {
     navigate({ search: { category: c, work: undefined }, resetScroll: false });
   const openItem = useCallback(
     (item: PortfolioItem) =>
-      navigate({ search: (prev) => ({ ...prev, work: item.slug }), resetScroll: false, replace: !!work }),
+      navigate({
+        search: (prev) => ({ ...prev, work: item.slug }),
+        resetScroll: false,
+        replace: !!work,
+      }),
     [navigate, work],
   );
-  const close = () => navigate({ search: (prev) => ({ ...prev, work: undefined }), resetScroll: false });
+  const close = () =>
+    navigate({ search: (prev) => ({ ...prev, work: undefined }), resetScroll: false });
 
   const tabs: { id: CategoryId | undefined; label: string; count: number }[] = [
     { id: undefined, label: "All work", count: PORTFOLIO.length },
@@ -84,8 +90,8 @@ function PortfolioPage() {
           </div>
           <p className="flex gap-3 rounded-2xl bg-card p-4 text-sm leading-relaxed text-muted-foreground shadow-soft ring-1 ring-border/70">
             <Info className="mt-0.5 size-4 shrink-0 text-sky" aria-hidden />
-            These pieces form a style and concept collection. They show the range of looks
-            available for your project and are not presented as published client books.
+            These pieces form a style and concept collection. They show the range of looks available
+            for your project and are not presented as published client books.
           </p>
         </div>
 
@@ -141,7 +147,9 @@ function PortfolioPage() {
               <div key={c.id}>
                 <Reveal className="mb-7 flex flex-col justify-between gap-3 border-b border-border pb-5 sm:flex-row sm:items-end">
                   <div>
-                    <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">{c.label}</h2>
+                    <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">
+                      {c.label}
+                    </h2>
                     <p className="mt-2 max-w-xl text-muted-foreground">{c.blurb}</p>
                   </div>
                   <button

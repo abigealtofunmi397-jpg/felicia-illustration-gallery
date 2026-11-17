@@ -68,7 +68,12 @@ const STYLES = [
   "Dr. Seuss–inspired (original)",
 ];
 
-const strip = ["the-star-catchers", "fox-character-study", "polar-bear-and-puffin", "rainbow-road-village"]
+const strip = [
+  "the-star-catchers",
+  "fox-character-study",
+  "polar-bear-and-puffin",
+  "rainbow-road-village",
+]
   .map((s) => getItem(s))
   .filter((i): i is NonNullable<typeof i> => !!i);
 
@@ -78,14 +83,19 @@ function AboutPage() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 pt-10 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20 lg:pt-16">
         <div className="relative mx-auto w-full max-w-md animate-in fade-in zoom-in-95 duration-1000">
           <div className="absolute -inset-4 -rotate-3 rounded-[3rem] bg-lilac-soft" aria-hidden />
-          <div className="absolute -right-6 -top-6 size-24 rounded-full bg-mustard-soft" aria-hidden />
+          <div
+            className="absolute -right-6 -top-6 size-24 rounded-full bg-mustard-soft"
+            aria-hidden
+          />
           <img
             src={headshot.url}
             alt="Portrait of Adeniran Felicia"
             className="relative aspect-[4/5] w-full rounded-[2.5rem] object-cover object-[50%_20%] shadow-lift"
           />
           <span className="absolute -bottom-6 left-6 -rotate-3 rounded-2xl bg-card px-5 py-3 shadow-lift">
-            <span className="block font-hand text-2xl leading-none text-coral">Adeniran Felicia</span>
+            <span className="block font-hand text-2xl leading-none text-coral">
+              Adeniran Felicia
+            </span>
             <span className="text-sm text-muted-foreground">Illustrator & character designer</span>
           </span>
         </div>
@@ -93,7 +103,8 @@ function AboutPage() {
         <div className="animate-in fade-in slide-in-from-bottom-3 duration-700">
           <p className="font-hand text-2xl text-coral">about me</p>
           <h1 className="mt-2 text-5xl font-semibold leading-[1] text-foreground sm:text-6xl">
-            Turning ideas into visuals full of <span className="italic font-wonky text-coral">heart</span>
+            Turning ideas into visuals full of{" "}
+            <span className="italic font-wonky text-coral">heart</span>
           </h1>
           <div className="mt-7 space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
@@ -104,8 +115,8 @@ function AboutPage() {
               creating for them.
             </p>
             <p>
-              From book covers to interior illustrations and whimsical character design, her goal
-              is to turn ideas into memorable visuals that feel alive, friendly, and full of heart.
+              From book covers to interior illustrations and whimsical character design, her goal is
+              to turn ideas into memorable visuals that feel alive, friendly, and full of heart.
             </p>
           </div>
           <div className="mt-9 flex flex-wrap gap-3">
@@ -123,10 +134,18 @@ function AboutPage() {
           {APPROACH.map((a, i) => (
             <Reveal key={a.title} delay={i * 90}>
               <div className="h-full rounded-3xl bg-card p-7 shadow-soft ring-1 ring-border/70">
-                <span className={cn("grid size-12 place-items-center rounded-2xl", accentSoftBg[a.accent], accentText[a.accent])}>
+                <span
+                  className={cn(
+                    "grid size-12 place-items-center rounded-2xl",
+                    accentSoftBg[a.accent],
+                    accentText[a.accent],
+                  )}
+                >
                   <a.icon className="size-5" aria-hidden />
                 </span>
-                <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">{a.title}</h3>
+                <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">
+                  {a.title}
+                </h3>
                 <p className="mt-3 leading-relaxed text-muted-foreground">{a.text}</p>
               </div>
             </Reveal>
@@ -139,7 +158,9 @@ function AboutPage() {
           <Reveal className="h-full">
             <div className="h-full rounded-4xl bg-ink p-8 text-ink-foreground sm:p-12">
               <p className="font-hand text-2xl text-mustard">who I help</p>
-              <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">Made for people who create for children</h2>
+              <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">
+                Made for people who create for children
+              </h2>
               <ul className="mt-8 space-y-4">
                 {HELPS.map((h) => (
                   <li key={h} className="flex gap-3 text-ink-foreground/85">
@@ -153,14 +174,18 @@ function AboutPage() {
           <Reveal delay={120} className="h-full">
             <div className="flex h-full flex-col rounded-4xl bg-card p-8 shadow-soft ring-1 ring-border/70 sm:p-12">
               <p className="font-hand text-2xl text-coral">illustration styles</p>
-              <h2 className="mt-2 text-3xl font-semibold text-foreground sm:text-4xl">A range of looks for every story</h2>
+              <h2 className="mt-2 text-3xl font-semibold text-foreground sm:text-4xl">
+                A range of looks for every story
+              </h2>
               <ul className="mt-8 flex flex-wrap gap-2.5">
                 {STYLES.map((s, i) => (
                   <li
                     key={s}
                     className={cn(
                       "rounded-full px-4 py-2 font-medium text-foreground",
-                      accentSoftBg[(["coral", "sky", "lilac", "mustard", "leaf"] as const)[i % 5] ?? "coral"],
+                      accentSoftBg[
+                        (["coral", "sky", "lilac", "mustard", "leaf"] as const)[i % 5] ?? "coral"
+                      ],
                     )}
                   >
                     {s}
@@ -189,9 +214,12 @@ function AboutPage() {
       <section className="mx-auto max-w-3xl px-5 pt-28 text-center sm:px-8">
         <Reveal>
           <p className="font-hand text-2xl text-coral">let’s talk</p>
-          <h2 className="mt-2 text-4xl font-semibold text-foreground sm:text-5xl">Have a story that needs pictures?</h2>
+          <h2 className="mt-2 text-4xl font-semibold text-foreground sm:text-5xl">
+            Have a story that needs pictures?
+          </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">
-            Tell me about your book, characters or cover. I’ll reply with ideas, a timeline and next steps.
+            Tell me about your book, characters or cover. I’ll reply with ideas, a timeline and next
+            steps.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <WhatsAppButton />

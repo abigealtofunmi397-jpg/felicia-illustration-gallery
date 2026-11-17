@@ -7,7 +7,13 @@ import headshot from "@/assets/adeniran-felicia-headshot.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import {
   BUDGETS,
@@ -142,7 +148,9 @@ function ContactPage() {
         <div className="grid gap-10 rounded-4xl bg-card p-6 shadow-soft ring-1 ring-border/70 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:p-14">
           <div>
             <p className="font-hand text-2xl text-coral">project inquiry</p>
-            <h2 className="mt-2 text-4xl font-semibold leading-tight text-foreground">Tell me about your project</h2>
+            <h2 className="mt-2 text-4xl font-semibold leading-tight text-foreground">
+              Tell me about your project
+            </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               The more you share, the better I can suggest a style, timeline and price. Don’t worry
               if you haven’t decided everything yet.
@@ -220,14 +228,31 @@ function InquiryForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-5 sm:grid-cols-2">
       <Field id="name" label="Full name" error={errors.name}>
-        <Input id="f-name" name="name" autoComplete="name" className={fieldBase} aria-invalid={!!errors.name} />
+        <Input
+          id="f-name"
+          name="name"
+          autoComplete="name"
+          className={fieldBase}
+          aria-invalid={!!errors.name}
+        />
       </Field>
       <Field id="email" label="Email address" error={errors.email}>
-        <Input id="f-email" name="email" type="email" autoComplete="email" className={fieldBase} aria-invalid={!!errors.email} />
+        <Input
+          id="f-email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          className={fieldBase}
+          aria-invalid={!!errors.email}
+        />
       </Field>
       <Field id="projectType" label="Project type" error={errors.projectType}>
         <Select value={projectType} onValueChange={setProjectType}>
-          <SelectTrigger id="f-projectType" className={cn(fieldBase, "w-full")} aria-invalid={!!errors.projectType}>
+          <SelectTrigger
+            id="f-projectType"
+            className={cn(fieldBase, "w-full")}
+            aria-invalid={!!errors.projectType}
+          >
             <SelectValue placeholder="Choose one" />
           </SelectTrigger>
           <SelectContent>
@@ -242,7 +267,12 @@ function InquiryForm() {
       <Field id="projectTitle" label="Book / brand / project title" optional>
         <Input id="f-projectTitle" name="projectTitle" className={fieldBase} />
       </Field>
-      <Field id="description" label="Description of project" error={errors.description} className="sm:col-span-2">
+      <Field
+        id="description"
+        label="Description of project"
+        error={errors.description}
+        className="sm:col-span-2"
+      >
         <Textarea
           id="f-description"
           name="description"
@@ -253,17 +283,36 @@ function InquiryForm() {
         />
       </Field>
       <Field id="illustrations" label="Number of illustrations needed" optional>
-        <Input id="f-illustrations" name="illustrations" placeholder="e.g. 16 spreads + cover" className={fieldBase} />
+        <Input
+          id="f-illustrations"
+          name="illustrations"
+          placeholder="e.g. 16 spreads + cover"
+          className={fieldBase}
+        />
       </Field>
       <Field id="style" label="Desired style" optional>
-        <Input id="f-style" name="style" placeholder="e.g. warm storybook, whimsical" className={fieldBase} />
+        <Input
+          id="f-style"
+          name="style"
+          placeholder="e.g. warm storybook, whimsical"
+          className={fieldBase}
+        />
       </Field>
       <Field id="timeline" label="Deadline / timeline" optional>
-        <Input id="f-timeline" name="timeline" placeholder="e.g. by March 2027" className={fieldBase} />
+        <Input
+          id="f-timeline"
+          name="timeline"
+          placeholder="e.g. by March 2027"
+          className={fieldBase}
+        />
       </Field>
       <Field id="budget" label="Budget range" error={errors.budget}>
         <Select value={budget} onValueChange={setBudget}>
-          <SelectTrigger id="f-budget" className={cn(fieldBase, "w-full")} aria-invalid={!!errors.budget}>
+          <SelectTrigger
+            id="f-budget"
+            className={cn(fieldBase, "w-full")}
+            aria-invalid={!!errors.budget}
+          >
             <SelectValue placeholder="Choose a range" />
           </SelectTrigger>
           <SelectContent>

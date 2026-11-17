@@ -39,10 +39,17 @@ export function ServiceCard({ service, index }: { service: Service; index?: numb
           </span>
         )}
       </div>
-      <h3 className={cn("relative font-display text-2xl font-semibold leading-tight text-foreground", typeof index === "number" ? "mt-1" : "mt-12")}>
+      <h3
+        className={cn(
+          "relative font-display text-2xl font-semibold leading-tight text-foreground",
+          typeof index === "number" ? "mt-1" : "mt-12",
+        )}
+      >
         {service.name}
       </h3>
-      <p className="relative mt-3 flex-1 leading-relaxed text-muted-foreground">{service.description}</p>
+      <p className="relative mt-3 flex-1 leading-relaxed text-muted-foreground">
+        {service.description}
+      </p>
       <a
         href={whatsappLink(
           `Hi Adeniran Felicia, I’d like to ask about your ${service.name} service for my project.`,

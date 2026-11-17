@@ -57,7 +57,9 @@ export function buildInquiryMessage(v: Inquiry): string {
   return [
     "Hi Adeniran Felicia, I’d love to discuss a project. Here are the details:",
     "",
-    ...lines.filter(([, value]) => value && value.length > 0).map(([k, value]) => `• ${k}: ${value}`),
+    ...lines
+      .filter(([, value]) => value && value.length > 0)
+      .map(([k, value]) => `• ${k}: ${value}`),
     "",
     "About the project:",
     v.description,

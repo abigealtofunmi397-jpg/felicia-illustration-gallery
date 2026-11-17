@@ -69,11 +69,19 @@ export function SiteHeader() {
 
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="paper" size="icon" className="size-11 lg:hidden" aria-label="Open menu">
+            <Button
+              variant="paper"
+              size="icon"
+              className="size-11 lg:hidden"
+              aria-label="Open menu"
+            >
               <Menu />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="flex w-[86%] flex-col gap-0 bg-background p-0 sm:max-w-sm">
+          <SheetContent
+            side="right"
+            className="flex w-[86%] flex-col gap-0 bg-background p-0 sm:max-w-sm"
+          >
             <div className="border-b border-border px-6 py-5">
               <SheetTitle className="sr-only">Menu</SheetTitle>
               <Wordmark />

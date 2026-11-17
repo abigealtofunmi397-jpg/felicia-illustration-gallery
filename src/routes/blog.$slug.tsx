@@ -4,6 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import { BlogCard } from "@/components/site/BlogCard";
 import { InquiryButton, UpworkButton, WhatsAppButton } from "@/components/site/ContactButtons";
 import { formatDate, getPost, POSTS } from "@/data/blog";
+import { accentSoftBg } from "@/lib/accents";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -14,7 +16,12 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     const post = loaderData?.post;
     if (!post) {
-      return { meta: [{ title: "Article not found — Adeniran Felicia" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [
+          { title: "Article not found — Adeniran Felicia" },
+          { name: "robots", content: "noindex" },
+        ],
+      };
     }
     return {
       meta: [
@@ -58,9 +65,22 @@ function ArticlePage() {
       </header>
 
       <div className="mx-auto mt-10 max-w-5xl px-5 sm:px-8">
-        <div className="overflow-hidden rounded-4xl bg-muted shadow-lift">
-          <img src={post.cover} alt={post.coverAlt}
-          style={{ objectPosition: post.coverPosition ?? "center" }} className="aspect-[16/8] w-full object-cover" />
+        <div
+          className={cn(
+            "relative grid place-items-center overflow-hidden rounded-4xl px-6 py-12",
+            accentSoftBg[post.accent],
+          )}
+        >
+          <div className="absolute -left-10 -top-10 size-40 rounded-full bg-card/50" aria-hidden />
+          <div
+            className="absolute -bottom-12 -right-6 size-48 rounded-full bg-card/40"
+            aria-hidden
+          />
+          <img
+            src={post.cover}
+            alt={post.coverAlt}
+            className="relative h-72 w-auto -rotate-2 rounded-2xl object-contain shadow-book ring-8 ring-card sm:h-96"
+          />
         </div>
       </div>
 
@@ -71,7 +91,9 @@ function ArticlePage() {
 
         {post.sections.map((section) => (
           <section key={section.heading} className="mt-12">
-            <h2 className="text-3xl font-semibold leading-tight text-foreground">{section.heading}</h2>
+            <h2 className="text-3xl font-semibold leading-tight text-foreground">
+              {section.heading}
+            </h2>
             {section.paragraphs.map((para) => (
               <p key={para.slice(0, 32)} className="mt-4 text-lg leading-[1.8] text-foreground/85">
                 {para}
@@ -92,7 +114,9 @@ function ArticlePage() {
 
         <aside className="mt-16 rounded-4xl bg-lilac-soft p-8 sm:p-10">
           <p className="font-hand text-2xl text-coral">ready when you are</p>
-          <h2 className="mt-1 text-3xl font-semibold text-foreground">Let’s bring your story to life</h2>
+          <h2 className="mt-1 text-3xl font-semibold text-foreground">
+            Let’s bring your story to life
+          </h2>
           <p className="mt-3 text-lg leading-relaxed text-muted-foreground">{post.closing}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <WhatsAppButton size="lg" />
