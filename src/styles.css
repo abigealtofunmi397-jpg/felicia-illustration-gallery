@@ -323,3 +323,28 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@theme inline {
+  --animate-progress: progress var(--progress-duration, 6s) linear both;
+  --animate-spin-slow: spin-slow 22s linear infinite;
+}
+
+/* Arched portrait frame: round top, softly rounded bottom corners */
+@utility arch {
+  border-radius: 50% 50% 2.5rem 2.5rem / 36% 36% 2.5rem 2.5rem;
+}
