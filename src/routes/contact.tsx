@@ -23,7 +23,7 @@ import {
   PROJECT_TYPES,
   type Inquiry,
 } from "@/lib/inquiry";
-import { SITE, bookingLink, whatsappLink } from "@/lib/site";
+import { SITE, bookingLink, whatsappLink, assetUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/contact")({
@@ -70,7 +70,7 @@ function ContactPage() {
           </div>
           <div className="flex items-center gap-4 rounded-full bg-card py-2 pl-2 pr-6 shadow-soft ring-1 ring-border/70">
             <img
-              src={headshot.url}
+              src={assetUrl(headshot.url)}
               alt="Adeniran Felicia"
               className="size-14 rounded-full object-cover object-[50%_20%]"
             />

@@ -1,3 +1,5 @@
+import { assetUrl } from "@/lib/site";
+
 type AssetPointer = { default: { url: string } };
 
 const assets = import.meta.glob<AssetPointer>("../assets/portfolio/*.asset.json", {
@@ -7,7 +9,7 @@ const assets = import.meta.glob<AssetPointer>("../assets/portfolio/*.asset.json"
 function art(file: string): string {
   const hit = assets[`../assets/portfolio/${file}.jpg.asset.json`];
   if (!hit) throw new Error(`Missing portfolio asset: ${file}`);
-  return hit.default.url;
+  return assetUrl(hit.default.url);
 }
 
 export type CategoryId = "covers" | "characters" | "interiors" | "whimsical";

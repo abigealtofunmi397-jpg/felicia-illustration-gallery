@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/site";
 import type { CSSProperties } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowDown } from "lucide-react";
@@ -120,7 +121,7 @@ function HomePage() {
           <Reveal className="relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-3 rotate-3 rounded-[2.5rem] bg-sky-soft" aria-hidden />
             <img
-              src={headshot.url}
+              src={assetUrl(headshot.url)}
               alt="Portrait of Adeniran Felicia"
               loading="lazy"
               className="relative aspect-square w-full rounded-[2.25rem] object-cover object-[50%_25%] shadow-lift"
@@ -263,7 +264,7 @@ function HeroArtwork() {
       {/* portrait */}
       <div className="absolute inset-x-[17%] bottom-[4%] top-[3%] arch overflow-hidden bg-lilac-soft shadow-lift ring-8 ring-card">
         <img
-          src={headshot.url}
+          src={assetUrl(headshot.url)}
           alt="Adeniran Felicia, children’s book illustrator"
           className="size-full object-cover object-[50%_22%]"
           fetchPriority="high"

@@ -24,3 +24,17 @@ export function bookingLink(url: string = SITE.bookingUrl): string | null {
   const trimmed = url.trim();
   return /^https?:\/\//.test(trimmed) ? trimmed : null;
 }
+
+/**
+ * Images are stored on Lovable's file hosting, which only answers on Lovable
+ * domains. Prefixing the stored path with a Lovable origin lets the same
+ * pictures load when the site is hosted elsewhere (e.g. Vercel).
+ * Override with VITE_ASSET_ORIGIN if the Lovable address changes.
+ */
+export const ASSET_ORIGIN: string =
+  (import.meta.env["VITE_ASSET_ORIGIN"] as string | undefined)?.replace(/\/$/, "") ||
+  "https://felicia-illustration-gallery.lovable.app";
+
+export function assetUrl(path: string, origin: string = ASSET_ORIGIN): string {
+  return path.startsWith("/__l5e/") ? `${origin}${path}` : path;
+}

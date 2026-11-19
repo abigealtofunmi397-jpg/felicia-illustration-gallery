@@ -1,3 +1,4 @@
+import { assetUrl } from "@/lib/site";
 import { createFileRoute } from "@tanstack/react-router";
 import { Heart, Palette, Sparkles } from "lucide-react";
 
@@ -88,7 +89,7 @@ function AboutPage() {
             aria-hidden
           />
           <img
-            src={headshot.url}
+            src={assetUrl(headshot.url)}
             alt="Portrait of Adeniran Felicia"
             className="relative aspect-[4/5] w-full rounded-[2.5rem] object-cover object-[50%_20%] shadow-lift"
           />

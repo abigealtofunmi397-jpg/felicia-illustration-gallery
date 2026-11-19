@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { CATEGORIES, FEATURED, PORTFOLIO, itemsIn } from "@/data/portfolio";
 import { TESTIMONIALS } from "@/data/testimonials";
 import { buildInquiryMessage } from "@/lib/inquiry";
-import { SITE, bookingLink, whatsappLink } from "@/lib/site";
+import { SITE, assetUrl, bookingLink, whatsappLink } from "@/lib/site";
 
 describe("portfolio rules", () => {
   it("has exactly 40 pieces", () => {
@@ -69,5 +69,16 @@ describe("contact rules", () => {
     expect(msg).toContain("• Project type: Book cover design");
     expect(msg).toContain("• Preferred contact: Email");
     expect(msg).not.toContain("Project title");
+  });
+});
+
+describe("image links work outside Lovable hosting", () => {
+  it("prefixes stored image paths with the Lovable site address", () => {
+    expect(assetUrl("/__l5e/assets-v1/abc/x.jpg")).toBe(
+      "https://felicia-illustration-gallery.lovable.app/__l5e/assets-v1/abc/x.jpg",
+    );
+  });
+  it("leaves full links untouched", () => {
+    expect(assetUrl("https://example.com/a.png")).toBe("https://example.com/a.png");
   });
 });

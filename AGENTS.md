@@ -35,3 +35,4 @@ use the editor.
 - Portfolio images are CDN asset pointers in `src/assets/portfolio/`, loaded by filename via `import.meta.glob` in `src/data/portfolio.ts`; keep one pointer per piece so no image is reused.
 - Booking buttons render only when `SITE.bookingUrl` is a real http(s) link, so no broken call-to-action ships.
 - The inquiry form has no backend: it formats details with `buildInquiryMessage` and opens WhatsApp, so nothing claims an email was sent.
+- Render every stored image through `assetUrl()` in `src/lib/site.ts`, which makes Lovable asset paths absolute, because the site is also hosted on Vercel where relative `/__l5e/` paths 404.
